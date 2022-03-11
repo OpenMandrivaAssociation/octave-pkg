@@ -33,7 +33,7 @@ for an updated reference.
 
 %files
 %license COPYING
-%doc NEWS
+#doc NEWS
 %dir %{octpkgdir}
 %{octpkgdir}/*
 
@@ -50,6 +50,8 @@ for an updated reference.
 
 %install
 %octave_pkg_install
+
+rm -f %{buildroot}%{_datadir}/octave/octave_packages
 
 %check
 # NOTE: check fails because actually pkg can't be uninstalled without admin privileges
